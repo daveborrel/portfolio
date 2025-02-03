@@ -12,7 +12,7 @@ function PortfolioNavBar() {
           <Nav className="me-auto">
             <Nav.Link href="#about-me">About Me</Nav.Link>
             <Nav.Link href="#experience">Experience</Nav.Link>
-            <Nav.Link href="#project">Projects</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

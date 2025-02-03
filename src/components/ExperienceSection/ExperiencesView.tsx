@@ -20,7 +20,7 @@ export const ExperiencesView = () => {
       <Row className="text-center mb-3" id="experience">
         <h2>Experience</h2>
       </Row>
-      <Row className="text-center mb-3" id="experience">
+      <Row className="text-center mb-3">
         <h4>
           <a href="https://www.linkedin.com/in/daveborrel/">View LinkedIn</a>
         </h4>
