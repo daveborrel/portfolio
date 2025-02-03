@@ -1,4 +1,6 @@
 import { Card } from "react-bootstrap";
+import image1 from "/1.png";
+import image2 from "/2.png";
 
 interface ProjectCardProps {
   key?: number;
@@ -8,7 +10,7 @@ interface ProjectCardProps {
 export const ProjectCard = ({ item }: ProjectCardProps) => {
   return (
     <Card>
-      <Card.Img variant="top" src={item.image} />
+      <Card.Img variant="top" src={item.id === 1 ? image1 : image2} />
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
         <Card.Text>{item.description}</Card.Text>

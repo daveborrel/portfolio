@@ -1,4 +1,5 @@
 import Card from "react-bootstrap/Card";
+import cropImage from "/crop.jpg";
 
 export const AboutImage = () => {
   return (
@@ -6,7 +7,7 @@ export const AboutImage = () => {
       <Card>
         <Card.Img
           variant="top"
-          src="/crop.jpg"
+          src={cropImage}
           style={{
             width: "30%",
             height: "auto",

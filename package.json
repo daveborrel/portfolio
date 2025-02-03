@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "homepage": "https://daveborrel.github.io/portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -32,6 +33,5 @@
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5"
-  },
-  "homepage": "https://daveborrel.github.io/portfolio"
+  }
 }
