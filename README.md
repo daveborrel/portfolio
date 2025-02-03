@@ -1,7 +1,7 @@
 # Portfolio Website
 
-React boilerplate and project generated using [Vite](https://www.genome.gov/)
-UI Library used [React Bootstrap](https://react-bootstrap.netlify.app/)
+- React boilerplate and project generated using [Vite](https://www.genome.gov/)
+- UI Library used [React Bootstrap](https://react-bootstrap.netlify.app/)
 
 ### User Stories
 

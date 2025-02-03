@@ -1,0 +1,27 @@
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Override Bootstrap theme colors
+$theme-colors: (
+  "primary": #0d6efd,
+  "secondary": #6c757d,
+  "success": #198754,
+  "info": #17a2b8,
+  "warning": #ffc107,
+  "danger": #dc3545,
+  "light": #f8f9fa,
+  "dark": #212529,
+  // Dark mode background
+);
+
+$body-bg: #121212; // Dark background like this website
+$body-color: #e0e0e0; // Light text for dark mode
+
+// Apply global styles for dark mode
+body {
+  background-color: $body-bg;
+  color: $body-color;
+}
+
+// Re-import Bootstrap to apply changes
+@import "bootstrap/scss/bootstrap";

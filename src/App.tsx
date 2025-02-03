@@ -1,12 +1,15 @@
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 
 import { PortfolioView } from "./components/PortfolioView";
+import PortfolioNavBar from "./components/PortfolioNavBar";
 
 function App() {
   return (
-    <>
-      <PortfolioView></PortfolioView>
-    </>
+    <div className="bg-dark text-light min-vh-100">
+      <PortfolioNavBar />
+      <PortfolioView />
+    </div>
   );
 }
 
