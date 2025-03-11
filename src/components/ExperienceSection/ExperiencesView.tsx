@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { ExperienceItem } from "./ExperienceItem";
 
 const experiences = [
@@ -6,11 +6,21 @@ const experiences = [
     title: "Full Stack Software Engineer I",
     company: "Procurify",
     dates: "Jun. 2024 - Jan. 2025",
+    tasks: [
+      "Implemented multiple full-stack initiatives including enhancing purchase order search API to streamline user workflows.",
+      "Migrated Angular modules to React, reducing codebase size while establishing architectural patterns for future migrations.",
+    ],
+    techStack: ["React", "Django", "Python", "TypeScript", "Docker"],
   },
   {
     title: "Full Stack Software Engineer Intern",
     company: "Procurify",
     dates: "Sep. 2022 - Aug. 2023",
+    tasks: [
+      "Enhanced Django REST APIs to support web and mobile clients, optimizing backend logic and automating workflows",
+      "Built comprehensive test coverage across React, Django, and E2E testing while maintaining rapid issue resolution",
+    ],
+    techStack: ["React", "Angular", "Django", "Python", "TypeScript"],
   },
 ];
 
@@ -27,7 +37,9 @@ export const ExperiencesView = () => {
       </Row>
       <Row>
         {experiences.map((experience, index) => (
-          <ExperienceItem key={index} experience={experience} />
+          <Col md={6} key={index}>
+            <ExperienceItem experience={experience} />
+          </Col>
         ))}
       </Row>
     </Container>

@@ -23,5 +23,24 @@ body {
   color: $body-color;
 }
 
+// Changes the color when hovering
+.navbar {
+  .nav-link {
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #0d6efd !important; // Using your primary color for the hover effect
+    }
+  }
+
+  .navbar-brand {
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #0d6efd !important;
+    }
+  }
+}
+
 // Re-import Bootstrap to apply changes
 @import "bootstrap/scss/bootstrap";

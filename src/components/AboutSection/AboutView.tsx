@@ -9,7 +9,7 @@ export const AboutView = () => {
         <Card.Title>About Me</Card.Title>
         <AboutImage />
       </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+      <Card.Footer className="text-muted"></Card.Footer>
     </Card>
   );
 };
