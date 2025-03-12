@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 import { PortfolioView } from "./components/PortfolioView";
 import PortfolioNavBar from "./components/PortfolioNavBar";

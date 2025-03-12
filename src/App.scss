@@ -42,5 +42,14 @@ body {
   }
 }
 
+// Ensures each section is one full viewport size so that its even
+.full-screen {
+  min-height: 100vh; /* Ensures full viewport height */
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  width: 100%; /* Ensures full width */
+}
+
 // Re-import Bootstrap to apply changes
 @import "bootstrap/scss/bootstrap";
