@@ -6,7 +6,7 @@ interface TechStackProps {
 
 export const TechStackAccordion = ({ techStack }: TechStackProps) => {
   return (
-    <Accordion defaultActiveKey="0" flush>
+    <Accordion flush>
       <Accordion.Item eventKey="0">
         <Accordion.Header>Tech Stack</Accordion.Header>
         {techStack.map((item: any, index: any) => (

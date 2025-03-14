@@ -23,6 +23,48 @@ body {
   color: $body-color;
 }
 
+.landing {
+  display: grid;
+  position: relative;
+}
+
+.landing > img,
+.landing > h1,
+.landing > h4,
+.landing > button {
+  grid-area: 1/1;
+}
+
+.landing > h1 {
+  align-self: center;
+  margin-top: -100px; /* Move it up from the center */
+  justify-self: center;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.landing > h4 {
+  align-self: center;
+  justify-self: center;
+  margin-top: 0; /* Keep it at the center */
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.landing > button {
+  align-self: center;
+  justify-self: center;
+  margin-top: 100px; /* Move it down from the center */
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 // Changes the color when hovering
 .navbar {
   .nav-link {

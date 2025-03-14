@@ -2,10 +2,14 @@ import { Stack } from "react-bootstrap";
 import { AboutView } from "./AboutSection/AboutView";
 import { ExperiencesView } from "./ExperienceSection/ExperiencesView";
 import { ProjectsView } from "./ProjectsSection/ProjectsView";
+import { LandingPageSection } from "./LandingPageSection/LandingPageSection";
 
 export const PortfolioView = () => {
   return (
     <Stack gap={0} className="overflow-hidden">
+      <section className="full-screen">
+        <LandingPageSection />
+      </section>
       <section className="full-screen">
         <AboutView />
       </section>

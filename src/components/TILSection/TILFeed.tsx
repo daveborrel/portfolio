@@ -27,7 +27,7 @@ export const TILFeed = () => {
   return (
     <>
       <Card>
-        <Card.Header>TIL Feed</Card.Header>
+        <Card.Header className="text-center">TIL Feed</Card.Header>
         <Card.Body>
           <Card.Text>
             🚀 Today I Learned (TIL) – A collection of small (but mighty!)

@@ -41,7 +41,7 @@ export const ExperiencesView = () => {
           </a>
         </h4>
       </Row>
-      <Row>
+      <Row className="d-flex">
         {experiences.map((experience, index) => (
           <Col md={6} key={index}>
             <ExperienceItem experience={experience} />
