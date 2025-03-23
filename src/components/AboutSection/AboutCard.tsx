@@ -1,5 +1,5 @@
 import Card from "react-bootstrap/Card";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 function AboutCard() {
   return (
