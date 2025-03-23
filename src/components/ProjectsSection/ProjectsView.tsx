@@ -55,7 +55,9 @@ export const ProjectsView = () => {
             className="d-flex align-items-stretch"
             key={project.id}
           >
-            <ProjectCard item={project} />
+            <section className="projectcard">
+              <ProjectCard item={project} />
+            </section>
           </Col>
         ))}
       </Row>

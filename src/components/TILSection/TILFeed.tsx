@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/Card";
 import { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
+import moment from "moment";
 
 // Define the interface for the GitHub commit data
 interface GitHubCommit {
@@ -40,7 +41,9 @@ export const TILFeed = () => {
               data.slice(0, 10).map((commit) => (
                 <ListGroup.Item key={commit.sha}>
                   <a href={commit.html_url}>{commit.commit.message}</a> -
-                  <strong>{commit.commit.author.date}</strong>
+                  <strong>
+                    {convertoISOtoMonthDayFormat(commit.commit.author.date)}
+                  </strong>
                 </ListGroup.Item>
               ))
             ) : (
@@ -62,3 +65,8 @@ export const TILFeed = () => {
     </>
   );
 };
+
+function convertoISOtoMonthDayFormat(date: string): string {
+  const formatted_date = moment.utc(date).local();
+  return formatted_date.format("MM/DD/YYYY");
+}

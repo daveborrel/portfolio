@@ -3,6 +3,7 @@ import { AboutView } from "./AboutSection/AboutView";
 import { ExperiencesView } from "./ExperienceSection/ExperiencesView";
 import { ProjectsView } from "./ProjectsSection/ProjectsView";
 import { LandingPageSection } from "./LandingPageSection/LandingPageSection";
+import { TILSection } from "./TILSection/TILSection";
 
 export const PortfolioView = () => {
   return (
@@ -18,6 +19,9 @@ export const PortfolioView = () => {
       </section>
       <section className="full-screen">
         <ProjectsView />
+      </section>
+      <section className="full-screen">
+        <TILSection />
       </section>
     </Stack>
   );
