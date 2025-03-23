@@ -1,6 +1,9 @@
 import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
+import Stack from "react-bootstrap/Stack";
+import Badge from "react-bootstrap/Badge";
+import Spinner from "react-bootstrap/Spinner";
 import { useEffect, useState } from "react";
-import { ListGroup } from "react-bootstrap";
 import moment from "moment";
 
 // Define the interface for the GitHub commit data
@@ -16,57 +19,69 @@ interface GitHubCommit {
 }
 
 export const TILFeed = () => {
-  let [data, setData] = useState<GitHubCommit[]>([]); // Set initial state as an empty array
+  const [data, setData] = useState<GitHubCommit[]>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/repos/daveborrel/til/commits")
       .then((response) => response.json())
-      .then((data: GitHubCommit[]) => setData(data)) // Type the data parameter
+      .then((data: GitHubCommit[]) => setData(data))
       .catch((error) => console.error("Error fetching commits:", error));
   }, []);
 
   return (
-    <>
-      <Card>
-        <Card.Header className="text-center">TIL Feed</Card.Header>
-        <Card.Body>
-          <Card.Text>
-            🚀 Today I Learned (TIL) – A collection of small (but mighty!)
-            insights I’ve picked up along the way. Whether it’s coding tricks,
-            life lessons, or random fun facts, I believe growth happens one
-            "aha!" moment at a time. 📚💡
-          </Card.Text>
-          <ListGroup>
-            {data.length > 0 ? (
-              data.slice(0, 10).map((commit) => (
-                <ListGroup.Item key={commit.sha}>
-                  <a href={commit.html_url}>{commit.commit.message}</a> -
-                  <strong>
-                    {convertoISOtoMonthDayFormat(commit.commit.author.date)}
-                  </strong>
-                </ListGroup.Item>
-              ))
-            ) : (
-              <ListGroup.Item>Loading...</ListGroup.Item> // Show a loading state
-            )}
+    <Card className="shadow-sm">
+      <Card.Header className="text-center fw-bold">📌 TIL Feed</Card.Header>
+      <Card.Body>
+        <Card.Text>
+          🚀 <strong>Today I Learned (TIL)</strong> – A collection of small (but
+          mighty!) insights I’ve picked up along the way. Growth happens one
+          "aha!" moment at a time. 📚💡
+        </Card.Text>
+        {data.length > 0 ? (
+          <ListGroup variant="flush">
+            {data.slice(0, 10).map((commit) => (
+              <ListGroup.Item
+                key={commit.sha}
+                className="d-flex justify-content-between align-items-center"
+              >
+                <Stack>
+                  <a
+                    href={commit.html_url}
+                    className="text-decoration-none"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    🔗 {commit.commit.message}
+                  </a>
+                </Stack>
+                <Badge bg="secondary">
+                  {formatDate(commit.commit.author.date)}
+                </Badge>
+              </ListGroup.Item>
+            ))}
           </ListGroup>
-        </Card.Body>
-        <Card.Footer>
-          {" "}
-          <Card.Link
-            href={"https://github.com/daveborrel/til"}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="bi bi-github me-1"></i> Github
-          </Card.Link>
-        </Card.Footer>
-      </Card>
-    </>
+        ) : (
+          <div className="text-center">
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
+        )}
+      </Card.Body>
+      <Card.Footer className="text-center">
+        <Card.Link
+          href="https://github.com/daveborrel/til"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fw-bold"
+        >
+          <i className="bi bi-github me-1"></i> View on GitHub
+        </Card.Link>
+      </Card.Footer>
+    </Card>
   );
 };
 
-function convertoISOtoMonthDayFormat(date: string): string {
-  const formatted_date = moment.utc(date).local();
-  return formatted_date.format("MM/DD/YYYY");
+function formatDate(date: string): string {
+  return moment.utc(date).local().format("MM/DD/YYYY");
 }
