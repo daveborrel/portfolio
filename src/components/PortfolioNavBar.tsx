@@ -11,7 +11,7 @@ function PortfolioNavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#about-me">About Me</Nav.Link>
-            <Nav.Link href="#experience">Experience</Nav.Link>
+            <Nav.Link href="#work">Work</Nav.Link>
             <Nav.Link href="#projects">Projects</Nav.Link>
             <Nav.Link href="#til">TIL</Nav.Link>
           </Nav>
