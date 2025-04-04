@@ -30,12 +30,11 @@ export const TILFeed = () => {
 
   return (
     <Card className="shadow-sm">
-      <Card.Header className="text-center fw-bold">📌 TIL Feed</Card.Header>
       <Card.Body>
         <Card.Text>
-          🚀 <strong>Today I Learned (TIL)</strong> – A collection of small (but
+          <strong>Today I Learned (TIL)</strong> – A collection of small (but
           mighty!) insights I’ve picked up along the way. Growth happens one
-          "aha!" moment at a time. 📚💡
+          "aha!" moment at a time.
         </Card.Text>
         {data.length > 0 ? (
           <ListGroup variant="flush">
@@ -51,7 +50,7 @@ export const TILFeed = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    🔗 {commit.commit.message}
+                    {commit.commit.message}
                   </a>
                 </Stack>
                 <Badge bg="secondary">

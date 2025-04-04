@@ -65,6 +65,41 @@ body {
   }
 }
 
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about_image,
+.about_card {
+  opacity: 0; /* Start invisible */
+}
+
+.about_image.animate {
+  animation: slide-in-left 1.5s forwards;
+}
+
+.about_card.animate {
+  animation: slide-in-right 1.5s forwards;
+}
+
 // Changes the color when hovering the navigation bar selection
 .navbar {
   .nav-link {
@@ -118,6 +153,15 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+// Same slide in animation for the TIL section
+.today_i_learned {
+  opacity: 0; /* Start invisible */
+}
+
+.today_i_learned.animate {
+  animation: slide-in-left 1.5s forwards;
 }
 
 // Ensures each section is one full viewport size so that its even
